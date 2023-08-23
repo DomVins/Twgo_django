@@ -1,0 +1,125 @@
+
+curl -X POST -H "Content-Type: application/json" -d '{
+  "first_name": "John",
+  "last_name": "Doe",
+  "email": "qwert@1.com",
+  "password": "password",
+  "phone_number": "1234567890",
+  "nationality": "USA",
+  "gender": "Male"
+}' http://twgoapp.com/api/api/register-admin/
+
+
+
+curl -X POST -H "Content-Type: application/json" -d '{"email": "vinsdev185@gmail.com", "password": "12345"}' http://twgoapp.com/api/api/login-user/
+
+
+
+curl -X POST -H "Content-Type: application/json" -d '{
+  "first_name": "John",
+  "last_name": "Doe",
+  "email": "qwert@1.com",
+  "password": "password",
+  "phone_number": "1234567890",
+  "nationality": "USA",
+  "gender": "Male"
+}' http://twgoapp.com/api/api/register-user/
+
+
+
+curl -X POST -H "Content-Type: application/json" -d '{"email": "qwert@1.com", "password": "password"}' http://twgoapp.com/api/api/login-user/
+
+
+curl -X POST -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZXhwIjoxNjg1MTA3Mjc1LCJpYXQiOjE2ODUwMjA4NzV9.jL6sWOpIxihJSobqLKivYVsx6fdCwXMokq87sDigVYE" -H "Content-Type: application/json" -d '{
+  "title": "Fish cape",
+  "department": "Mechanical",
+  "category": "Engineering",
+  "budget": "100000",
+  "service_type": "do",
+  "delivery_date": "13th Dec 2022"
+}' http://twgoapp.com/api/api/create-project/
+
+
+curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZXhwIjoxNjg1MTA2MjUxLCJpYXQiOjE2ODUwMTk4NTF9.hTiSEIg-gWmvTQvqzU-6mJw6RZVVKpK4pI6PMoTZ2ZA" http://twgoapp.com/api/api/projects/
+
+
+curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNjg1NzA2NjE4LCJpYXQiOjE2ODU2MjAyMTh9.cTEWhnAhm__336HwNnpKliK70hXLI1QdzOs0G5w8toU" http://twgoapp.com/api/api/projects/user/
+
+
+curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZXhwIjoxNjg1MTA3Mjc1LCJpYXQiOjE2ODUwMjA4NzV9.jL6sWOpIxihJSobqLKivYVsx6fdCwXMokq87sDigVYE" http://twgoapp.com/api/api/notifications/
+
+
+curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZXhwIjoxNjg1MTA3Mjc1LCJpYXQiOjE2ODUwMjA4NzV9.jL6sWOpIxihJSobqLKivYVsx6fdCwXMokq87sDigVYE" -d '{
+  "recipient_id": "5",
+  "content": "Hello, this is a test message!"
+}' http://twgoapp.com/api/api/send-message/
+
+
+curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNjg1NzA2NjE4LCJpYXQiOjE2ODU2MjAyMTh9.cTEWhnAhm__336HwNnpKliK70hXLI1QdzOs0G5w8toU" http://twgoapp.com/api/api/user/
+
+
+curl -X POST -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZXhwIjoxNjg1MTA3Mjc1LCJpYXQiOjE2ODUwMjA4NzV9.jL6sWOpIxihJSobqLKivYVsx6fdCwXMokq87sDigVYE" http://twgoapp.com/api/api/projects/accept/8/
+
+
+curl -X POST -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZXhwIjoxNjg1MTA3Mjc1LCJpYXQiOjE2ODUwMjA4NzV9.jL6sWOpIxihJSobqLKivYVsx6fdCwXMokq87sDigVYE" http://twgoapp.com/api/api/projects/reject/6/
+
+
+curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZXhwIjoxNjg1MTA2MjUxLCJpYXQiOjE2ODUwMTk4NTF9.hTiSEIg-gWmvTQvqzU-6mJw6RZVVKpK4pI6PMoTZ2ZA" http://twgoapp.com/api/api/balance/
+
+
+curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNjg0OTM0ODc0LCJpYXQiOjE2ODQ4NDg0NzR9.FnoHCXAzHGX8GnTcxsCP5-P88CW7ihMXQX-rxsYv1Nw" http://twgoapp.com/api/api/info/
+
+
+curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNjg0NjE1MzcwLCJpYXQiOjE2ODQ1Mjg5NzB9.BnqPmf7fHC9GxjqB3bGmgQRV1T8VO0KiJA9H0zSNkQg" http://twgoapp.com/api/api/notifications/
+
+
+curl -X POST -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZXhwIjoxNjg1MTM5OTM3LCJpYXQiOjE2ODUwNTM1Mzd9.A9yq3K1imhy654QjcdVowSmKYMLOJHaIHP0iMe-Dy5U" -H "Content-Type: application/json" -d '{
+"amount": "5.00", 
+"action": "add"
+}' http://twgoapp.com/api/api/balance/
+
+
+curl -X POST -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNjg1NzA2NjE4LCJpYXQiOjE2ODU2MjAyMTh9.cTEWhnAhm__336HwNnpKliK70hXLI1QdzOs0G5w8toU" -H "Content-Type: application/json" -d '{
+"title": "Project related chat",
+"participants": [{"id": 1},{"id": 11}]
+}' http://twgoapp.com/api/api/conversations/create/
+
+
+[Project Related Chat, Support, Edu Consult, Get Work, Accomondation Request]
+
+
+
+
+curl -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNjg1NzA2NjE4LCJpYXQiOjE2ODU2MjAyMTh9.cTEWhnAhm__336HwNnpKliK70hXLI1QdzOs0G5w8toU" \
+  -d '{
+    "conversation_id": 5,
+    "content": "I am hearing you"
+  }' \
+  http://twgoapp.com/api/api/conversations/send-message/
+
+
+curl -X GET \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNjg1NzA2NjE4LCJpYXQiOjE2ODU2MjAyMTh9.cTEWhnAhm__336HwNnpKliK70hXLI1QdzOs0G5w8toU" \
+http://twgoapp.com/api/api/conversations/5/messages/
+
+
+curl -X GET \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNjg1NzA2NjE4LCJpYXQiOjE2ODU2MjAyMTh9.cTEWhnAhm__336HwNnpKliK70hXLI1QdzOs0G5w8toU" \
+http://twgoapp.com/api/api/conversations/list/
+
+
+
+
+
+
+
+p1
+https://www.youtube.com/watch?v=8kaBtwAOQck
+p2
+https://www.youtube.com/watch?v=7BP8Nue3a4A
+
+
+flutter django
+https://www.youtube.com/watch?v=VnztChBw7Og

@@ -1,0 +1,113 @@
+user = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNjg2Mzk5MDAzLCJpYXQiOjE2ODYzMTI2MDN9.a5T2tIfa67JIM8L5tuGHhCN7MbPKUxRGaSlTRD7r8gg
+
+admin = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZXhwIjoxNjg2Mzk5MDI4LCJpYXQiOjE2ODYzMTI2Mjh9.VxrO49al5zZKohwnyWukv6_e03ksrpcsi3k9lLaeLS4
+
+
+curl -X POST -H "Content-Type: application/json" -d '{
+  "first_name": "Vincent",
+  "last_name": "Dominic",
+  "email": "user1@gmail.com",
+  "password": "user1",
+  "phone_number": "1234567890",
+  "nationality": "USA",
+  "gender": "Male"
+}' http://localhost:8000/api/register-user/
+
+
+curl -X POST -H "Content-Type: application/json" -d '{
+  "first_name": "Mark",
+  "last_name": "Namo",
+  "email": "user2@gmail.com",
+  "password": "user2",
+  "phone_number": "1234567890",
+  "nationality": "USA",
+  "gender": "Male"
+}' http://localhost:8000/api/register-admin/
+
+
+curl -X POST -H "Content-Type: application/json" -d '{"email": "user1@gmail.com", "password": "user1"}' http://localhost:8000/api/login-user/
+
+curl -X POST -H "Content-Type: application/json" -d '{"email": "user2@gmail.com", "password": "user2"}' http://localhost:8000/api/login-admin/
+
+
+
+curl -X POST -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNjg2MzI1MDA5LCJpYXQiOjE2ODYyMzg2MDl9.EcHwN5Ny3rNQCBDwUUFpwewckUt6c-K5EvH-_3q8McM" -H "Content-Type: application/json" -d '{
+  "title": "Fish cape",
+  "department": "Mechanical",
+  "category": "Engineering",
+  "budget": "100000",
+  "service_type": "do",
+  "delivery_date": "13th Dec 2022"
+}' http://localhost:8000/api/create-project/
+
+
+curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZXhwIjoxNjg1MTA2MjUxLCJpYXQiOjE2ODUwMTk4NTF9.hTiSEIg-gWmvTQvqzU-6mJw6RZVVKpK4pI6PMoTZ2ZA" http://localhost:8000/api/projects/
+
+
+curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNjg1NzA2NjE4LCJpYXQiOjE2ODU2MjAyMTh9.cTEWhnAhm__336HwNnpKliK70hXLI1QdzOs0G5w8toU" http://localhost:8000/api/projects/user/
+
+
+curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZXhwIjoxNjg1MTA3Mjc1LCJpYXQiOjE2ODUwMjA4NzV9.jL6sWOpIxihJSobqLKivYVsx6fdCwXMokq87sDigVYE" http://localhost:8000/api/notifications/
+
+
+curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZXhwIjoxNjg1MTA3Mjc1LCJpYXQiOjE2ODUwMjA4NzV9.jL6sWOpIxihJSobqLKivYVsx6fdCwXMokq87sDigVYE" -d '{
+  "recipient_id": "5",
+  "content": "Hello, this is a test message!"
+}' http://localhost:8000/api/send-message/
+
+
+curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNjg1NzA2NjE4LCJpYXQiOjE2ODU2MjAyMTh9.cTEWhnAhm__336HwNnpKliK70hXLI1QdzOs0G5w8toU" http://localhost:8000/api/user/
+
+
+curl -X POST -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZXhwIjoxNjg1MTA3Mjc1LCJpYXQiOjE2ODUwMjA4NzV9.jL6sWOpIxihJSobqLKivYVsx6fdCwXMokq87sDigVYE" http://localhost:8000/api/projects/accept/8/
+
+
+curl -X POST -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZXhwIjoxNjg1MTA3Mjc1LCJpYXQiOjE2ODUwMjA4NzV9.jL6sWOpIxihJSobqLKivYVsx6fdCwXMokq87sDigVYE" http://localhost:8000/api/projects/reject/6/
+
+
+curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZXhwIjoxNjg1MTA2MjUxLCJpYXQiOjE2ODUwMTk4NTF9.hTiSEIg-gWmvTQvqzU-6mJw6RZVVKpK4pI6PMoTZ2ZA" http://localhost:8000/api/balance/
+
+
+curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNjg0OTM0ODc0LCJpYXQiOjE2ODQ4NDg0NzR9.FnoHCXAzHGX8GnTcxsCP5-P88CW7ihMXQX-rxsYv1Nw" http://localhost:8000/api/info/
+
+
+curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNjg0NjE1MzcwLCJpYXQiOjE2ODQ1Mjg5NzB9.BnqPmf7fHC9GxjqB3bGmgQRV1T8VO0KiJA9H0zSNkQg" http://localhost:8000/api/notifications/
+
+
+curl -X POST -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZXhwIjoxNjg1MTM5OTM3LCJpYXQiOjE2ODUwNTM1Mzd9.A9yq3K1imhy654QjcdVowSmKYMLOJHaIHP0iMe-Dy5U" -H "Content-Type: application/json" -d '{
+"amount": "5.00", 
+"action": "add"
+}' http://localhost:8000/api/balance/
+
+
+curl -X POST -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZXhwIjoxNjg2Mzk5MDI4LCJpYXQiOjE2ODYzMTI2Mjh9.VxrO49al5zZKohwnyWukv6_e03ksrpcsi3k9lLaeLS4" -H "Content-Type: application/json" -d '{
+"title": "Project related chat",
+"participants": [{"id": 1},{"id": 2}]
+}' http://localhost:8000/api/conversations/create/
+
+
+
+
+[Project Related Chat, Support, Edu Consult, Get Work, Accomondation Request]
+
+
+
+
+curl -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNjg2Mzk5MDAzLCJpYXQiOjE2ODYzMTI2MDN9.a5T2tIfa67JIM8L5tuGHhCN7MbPKUxRGaSlTRD7r8gg" \
+  -d '{
+    "conversation_id": 1,
+    "content": "Good Boy"
+  }' \
+  http://localhost:8000/api/conversations/send-message/
+
+
+curl -X GET \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZXhwIjoxNjg2Mzk5MDI4LCJpYXQiOjE2ODYzMTI2Mjh9.VxrO49al5zZKohwnyWukv6_e03ksrpcsi3k9lLaeLS4" \
+http://localhost:8000/api/conversations/1/messages/
+
+
+curl -X GET \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNjg2Mzk5MDAzLCJpYXQiOjE2ODYzMTI2MDN9.a5T2tIfa67JIM8L5tuGHhCN7MbPKUxRGaSlTRD7r8gg" \
+http://localhost:8000/api/conversations/list/

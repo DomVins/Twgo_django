@@ -1,0 +1,18 @@
+source /home/sethslnw/virtualenv/django/twgo/3.9/bin/activate && cd /home/sethslnw/django/twgo
+
+
+199.188.201.82
+
+21098
+
+sethslnw
+
+
+P76u5sSP7i5WX1S
+
+
+
+
+super@gmail.com
+
+twgopro
